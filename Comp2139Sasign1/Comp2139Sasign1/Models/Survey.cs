@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,6 +38,25 @@ namespace Comp2139Sasign1
             this.efficentcy = efficentcy;
             this.resolution = resolution;
             this.comments = comments;
+        }
+        private Survey (int SurveyId, int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
+        {
+            this.survayId = SurveyId;
+            this.responeseTime = responeseTime;
+            this.efficentcy = efficentcy;
+            this.resolution = resolution;
+            this.comments = comments;
+        }
+
+        public Survey getSurveyByInicidentId(int incidentId)
+        {
+            DataRow survey = TKPdb.getSurveyByInicidentId(incidentId);
+            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"]);
+        }
+        public Survey getSurveyBySurveyId(int incidentId)
+        {
+            DataRow survey = TKPdb.getSurveyBySurveyId(incidentId);
+            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"]);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Comp2139Sasign1
     {
         static  string dir = System.IO.Path.GetFullPath(@"..\..\") + @"app_data\TKPdb.mdf";
         static private string conn = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={dir};Integrated Security=True";
-        public static SqlConnection conection { get; private set; } = new SqlConnection(conn);
+        static private SqlConnection conection = new SqlConnection(conn);
 
         static public DataRow getCustomerById(int id)
         {
