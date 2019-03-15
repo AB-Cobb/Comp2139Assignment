@@ -18,7 +18,9 @@ namespace Comp2139Assignment
             txtCustomerID.Text = Convert.ToString(Customer.getCustomerByEmail( ((User)Session["User"]).email).customerId);
             incidents = Incident.getIncidentsByCustomerEmail(((User)Session["User"]).email);
             ddlIncidentList.DataSource = incidents;
-            ddlIncidentList.DataBind();
+            ddlIncidentList.DataTextField = "description";
+            if (!IsPostBack)
+                ddlIncidentList.DataBind();
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -31,24 +33,12 @@ namespace Comp2139Assignment
         {
             if (Page.IsValid)
             {
-
+                int index = ddlIncidentList.SelectedIndex;
                 int resTime = getSurveyValue(rblResponseTime.SelectedValue);
                 int techEffic = getSurveyValue(rblTechnicianEfficiency.SelectedValue);
                 int probRes = getSurveyValue(rblProblemResolution.SelectedValue);
                 Survey survey = new Survey(incidents[ddlIncidentList.SelectedIndex].incidentId, resTime, techEffic, probRes, txtAdditionalComments.Text);
                 survey.saveSurvay();
-                /*
-                IncidentSurvey survey = new IncidentSurvey();
-                survey.description = ddlIncidentList.SelectedValue;
-                survey.responseTime = rblResponseTime.SelectedValue;
-                survey.technicianEfficiency = rblTechnicianEfficiency.SelectedValue;
-                survey.problemResolution = rblProblemResolution.SelectedValue;
-                survey.additionalComments = txtAdditionalComments.Text;
-                if (chkContactMe.Checked == true)
-                    survey.contactMe = rblContactMe.SelectedValue;
-                else
-                    survey.contactMe = null;
-                    */
                 Session["Survey"] = survey;
                 Response.Redirect("~/SurveySuccess.aspx");
             }
@@ -72,10 +62,13 @@ namespace Comp2139Assignment
         }
         protected void chkContactMe_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkContactMe.Checked == true)
+            rblContactMe.Enabled = chkContactMe.Checked;
+            /*
+            if (chkContactMe.Checked == true) //not good code
                 rblContactMe.Enabled = true;
             else
                 rblContactMe.Enabled = false;
+                */
         }
     }
 }

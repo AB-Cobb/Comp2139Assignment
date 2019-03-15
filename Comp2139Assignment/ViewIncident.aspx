@@ -71,7 +71,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">
-                        <asp:ListBox ID="lstbIncident" runat="server" Width="600px"></asp:ListBox>
+                        <asp:ListBox ID="lstbIncident" runat="server" Width="600px" OnSelectedIndexChanged="lstbIncident_SelectedIndexChanged"></asp:ListBox>
                     </td>
                     <td class="auto-style2"></td>
                 </tr>

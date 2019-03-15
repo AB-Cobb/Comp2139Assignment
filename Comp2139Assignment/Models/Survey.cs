@@ -14,26 +14,26 @@ namespace Comp2139Assignment
         public int efficentcy { get; set; }
         public int resolution { get; set; }
         public string contactMe { get; set;  }
+        private string _comments;
         public string comments {
             get {
-                return comments;
+                return _comments;
             }
             set {
                 if (value.Length > 250)
-                    comments = value.Substring(0, 250);
+                    _comments = value.Substring(0, 250);
                 else
-                    comments = value;
+                    _comments = value;
             }
         }
 
         public Survey (int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
         {
             this.surveyId = -1;
+            this.incidentId = incidentId;
             this.responeseTime = responeseTime;
             this.efficentcy = efficentcy;
             this.resolution = resolution;
-            if (comments.Length > 250)
-                comments = comments.Substring(0, 250);
             this.comments = comments;
         }
         
@@ -63,7 +63,15 @@ namespace Comp2139Assignment
             List<Survey> surveys = new List<Survey> { };
             DataTable surveyData = TKPdb.getSurveysByCustomerId(id);
             foreach (DataRow survey in surveyData.Rows)
-                surveys.Add(new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"]));
+            {
+                int surveyid = (int)survey["SurveyId"];
+                int incidentid = (int)survey["IncidentId"];
+                int responseTime = (Byte)survey["ResponseTime"];
+                int efficentcy = (Byte)survey["Efficentcy"];
+                int resultion = (Byte)survey["Resolution"];
+                string comments = (string)survey["Comments"];
+                surveys.Add(new Survey(surveyid, incidentid, responseTime, efficentcy, resultion, comments));
+            }
             return surveys;
         }
         

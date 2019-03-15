@@ -17,7 +17,9 @@ namespace Comp2139Assignment
                 Response.Redirect("~/Login.aspx");
             contactList = Customer.getContactList();
             lstbContactList.DataSource = contactList;
-            lstbContactList.DataBind();
+            lstbContactList.DataTextField = "contact";
+            if (!IsPostBack)
+                lstbContactList.DataBind();
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

@@ -37,8 +37,8 @@ namespace Comp2139Assignment
                     return;
                 }
                 // */
-
-                Session["User"] = Comp2139Assignment.User.login(txtUsername.Text, txtPassword.Text);
+                User user = Comp2139Assignment.User.login(txtUsername.Text, txtPassword.Text);
+                Session["User"] = user;
                 if (Session["User"] != null)
                     Response.Redirect("~/HomePage.aspx");
                 lblInvalidPassword.Visible = true;

@@ -87,7 +87,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="hplSurveyPage" runat="server" NavigateUrl="~/Survey.aspx">Submit a Survey to provide feedback for any support we have provided on your recent activity</asp:HyperLink>
+                        <asp:HyperLink ID="hplSurveyPage" runat="server" NavigateUrl="~/EnterSurvey.aspx">Submit a Survey to provide feedback for any support we have provided on your recent activity</asp:HyperLink>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>

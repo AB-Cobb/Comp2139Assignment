@@ -16,9 +16,14 @@ namespace Comp2139Assignment
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (Session["User"] == null)
                 Response.Redirect("~/Login.aspx");
+
             customers = Customer.getCustomerList();
             ddlCustomers.DataSource = customers;
-            ddlCustomers.DataBind();
+            ddlCustomers.DataTextField = "name";
+            if (!IsPostBack)
+            {
+                ddlCustomers.DataBind();
+            }
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -31,7 +36,8 @@ namespace Comp2139Assignment
         {
             if (Page.IsValid)
             {
-                int custId = Customer.getCustomerByEmail(((User)Session["User"]).email).customerId;
+                //int custId = Customer.getCustomerByEmail(((User)Session["User"]).email).customerId;
+                int custId = customers[ddlCustomers.SelectedIndex].customerId;
                 Incident incident = new Incident(custId, txtDescription.Text, rblMethodOfContact.SelectedValue);
                 incident.save();
                 Session["Incident"] = incident;
@@ -41,6 +47,7 @@ namespace Comp2139Assignment
 
         protected void ddlCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index = ddlCustomers.SelectedIndex;
             selectedCustomer = customers[ddlCustomers.SelectedIndex];
             txtCustomerID.Text = Convert.ToString(selectedCustomer.customerId);
             txtReportDateAndTime.Text = Convert.ToString(DateTime.Today);

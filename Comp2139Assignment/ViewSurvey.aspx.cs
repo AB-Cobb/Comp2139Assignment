@@ -19,23 +19,21 @@ namespace Comp2139Assignment
                 Response.Redirect("~/Login.aspx");
             customers = Customer.getCustomerList();
             ddlCustomers.DataSource = customers;
-            ddlCustomers.DataBind();
-            
+            ddlCustomers.DataTextField = "name";
+            if (!IsPostBack)
+                ddlCustomers.DataBind();
+            surveys = Survey.getSurveysByCustomerId(Customer.getCustomerByEmail(customers[ddlCustomers.SelectedIndex].email).customerId);
+            lstbSurvey.DataSource = surveys;
+            if (!IsPostBack)
+                lstbSurvey.DataBind();
+            lstbSurvey.DataTextField = "surveyId";
+            txtCustomer.Text = Convert.ToString(customers[ddlCustomers.SelectedIndex].customerId);
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("~/Login.aspx");
-        }
-
-        protected void ddlCustomers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            surveys = Survey.getSurveysByCustomerId(Customer.getCustomerByEmail(customers[ddlCustomers.SelectedIndex].email).customerId);
-            lstbSurvey.DataSource = surveys;
-            lstbSurvey.DataBind();
-            txtCustomer.Text = Convert.ToString(customers[ddlCustomers.SelectedIndex].customerId);
-            
         }
 
         protected void lstbSurvey_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +47,8 @@ namespace Comp2139Assignment
             lblProbResolution.Text = getSurveyText(selectedSurvey.resolution);
             lblResponseTime.Text = getSurveyText(selectedSurvey.responeseTime);
             lblTechEfficientcy.Text = getSurveyText(selectedSurvey.efficentcy);
+            txtAdditionalComments.Text = selectedSurvey.comments;
+            
         }
         private string getSurveyText(int value)
         {
@@ -67,6 +67,14 @@ namespace Comp2139Assignment
                 default:
                     return "No Answer";
             }
+        }
+
+        protected void ddlCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            surveys = Survey.getSurveysByCustomerId(Customer.getCustomerByEmail(customers[ddlCustomers.SelectedIndex].email).customerId);
+            lstbSurvey.DataSource = surveys;
+            lstbSurvey.DataTextField = "surveyId";
+            lstbSurvey.DataBind();
         }
     }
 }

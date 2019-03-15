@@ -27,13 +27,14 @@ namespace Comp2139Assignment
             if (Page.IsValid)
             {
                 Comp2139Assignment.User.register(txtEmail.Text, txtPassword.Text, txtFirstName.Text, txtLastName.Text);
+                Session["RegEmail"] = txtEmail.Text;
                 Response.Redirect("~/RegisterSuccess.aspx");
             }
         }
 
         protected void checkEmail(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = Comp2139Assignment.User.checkEmail(txtEmail.Text);
+            args.IsValid = !Comp2139Assignment.User.checkEmail(txtEmail.Text);
         }
     }
 }

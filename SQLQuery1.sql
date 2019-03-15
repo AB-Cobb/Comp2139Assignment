@@ -1,0 +1,1 @@
+﻿SELECT role FROM User_Role WHERE email = @email;

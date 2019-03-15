@@ -11,10 +11,9 @@ namespace Comp2139Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User user = (User)Session["User"];
-            Customer customer = Customer.getCustomerByEmail(user.email);
-            lblTextOne.Text = "Thank you for registering " + customer.fname + " " + customer.email + "!";
-            lblTextTwo.Text = "A confirmation email has been sent to " + customer.email + " to verify your registration";
+            string email = (string)Session["RegEmail"];
+            lblTextOne.Text = $"Thank you for registering {email}!";
+            lblTextTwo.Text = $"A confirmation email has been sent to {email} to verify your registration";
         }
 
         protected void btnReturnToLogin_Click(object sender, EventArgs e)

@@ -54,7 +54,7 @@
         </tr>
         <tr>
             <td class="auto-style4">Select A Customer:&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlCustomers" runat="server" Width="200px" OnSelectedIndexChanged="ddlCustomers_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlCustomers" runat="server" AutoPostBack="True" Width="200px" OnSelectedIndexChanged="ddlCustomers_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td class="auto-style6">Customer ID:&nbsp;&nbsp;

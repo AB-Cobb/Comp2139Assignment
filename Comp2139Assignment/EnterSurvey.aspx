@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td>Customer ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtCustomerID" runat="server" ReadOnly="True" OnTextChanged="txtCustomerID_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtCustomerID" runat="server" ReadOnly="True" Enabled="False"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -51,6 +51,7 @@
             <td>
                 <asp:DropDownList ID="ddlIncidentList" runat="server" Height="70px" Width="474px">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlIncidentList" ErrorMessage="Please Select an Incident" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

@@ -11,77 +11,94 @@ namespace Comp2139Assignment
         public int customerId { get; private set; }
         public string email { get; private set; }
         public string profileName { get; set; }
-
+        public string name {  get
+            {
+                return fname + " " + lname;
+            }
+        }
+        public string contact
+        {
+            get
+            {
+                return $"{name}, {phoneNum}, {email}";
+            }
+        }
+        private string _fname;
         public string fname
         {
             get
             {
-                return fname;
+                return this._fname;
             }
             set
             {
+ 
                 if (value.Length > 20)
-                    fname = value.Substring(0, 20);
+                    _fname = value.Substring(0, 20);
                 else
-                    fname = value;
+                    _fname = value;
             }
         }
+        private string _lname;
         public string lname
         {
             get
             {
-                return lname;
+                return _lname;
             }
             set
             {
                 if (value.Length > 20)
-                    lname = value.Substring(0, 20);
+                    _lname = value.Substring(0, 20);
                 else
-                    lname = value;
+                    _lname = value;
             }
-        }
+        } // */
+        private string _address;
         public string address
         {
             get
             {
-                return address;
+                return _address;
             }
             set
             {
                 if (value.Length > 100)
-                    address = value.Substring(0, 100);
+                    _address = value.Substring(0, 100);
                 else
-                    address = value;
+                    _address = value;
             }
-        }
+        }//*/
+        private string _phoneNum;
         public string phoneNum
         {
             get
             {
-                return phoneNum;
+                return _phoneNum;
             }
             set
             {
                 if (value.Length > 12)
-                    phoneNum = value.Substring(0, 12);
+                    _phoneNum = value.Substring(0, 12);
                 else
-                    phoneNum = value;
+                    _phoneNum = value;
             }
-        }
+        }// */
+        private string _position;
         public string position
         {
             get
             {
-                return position;
+                return _position;
             }
             set
             {
                 if (value.Length > 50)
-                    position = value.Substring(0, 50);
+                    _position = value.Substring(0, 50);
                 else
-                    position = value;
+                    _position = value;
             }
-        }
+        }// */
         public bool onContactList { get; set; }
 
         public Customer(string email, string fname, string lname, string address, bool onContactList = false)
@@ -113,27 +130,56 @@ namespace Comp2139Assignment
             List<Customer> contactList = new List<Customer> { };
             DataTable contactsData = TKPdb.getContactList();
             foreach (DataRow cust in contactsData.Rows)
-                contactList.Add(new Customer((int)cust["CustomerId"], (string)cust["email"], (string)cust["fname"], (string)cust["lname"], (string)cust["address"], (string)cust["phoneNum"], (string)cust["position"]));
+            {
+                int id = (int)cust["CustomerId"];
+                string email = (string)cust["email"];
+                string fname = (string)cust["fname"];
+                string lname = (string)cust["lname"];
+                string address = cust["address"] == DBNull.Value ? "" : (string)cust["address"];
+                string phoneNum = cust["phoneNum"] == DBNull.Value ? "" : (string)cust["phoneNum"];
+                string position = cust["position"] == DBNull.Value ? "" : (string)cust["position"];
+                contactList.Add(new Customer(id, email, fname, lname, address, phoneNum, position));
+            }
             return contactList;
         }
+
         static public Customer getCustomerById(int id)
         {
             DataRow cust = TKPdb.getCustomerById(id);
             return new Customer((int)cust["CustomerId"], (string)cust["email"], (string)cust["fname"], (string)cust["lname"], (string)cust["address"], (string)cust["phoneNum"], (string)cust["position"]);
         }
+
         static public Customer getCustomerByEmail(string email)
         {
             DataRow cust = TKPdb.getCustomerByEmail(email);
-            return new Customer((int)cust["CustomerId"], (string)cust["email"], (string)cust["fname"], (string)cust["lname"], (string)cust["address"], (string)cust["phoneNum"], (string)cust["position"]);
+
+            int id = (int)cust["CustomerId"];
+
+            string fname = (string)cust["fname"];
+            string lname = (string)cust["lname"];
+            string address = cust["address"] == DBNull.Value ? "" : (string)cust["address"];
+            string phoneNum = cust["phoneNum"] == DBNull.Value ? "" : (string)cust["phoneNum"];
+            string position = cust["position"] == DBNull.Value ? "" : (string)cust["position"];
+            return new Customer(id, email, fname, lname, address, phoneNum, position);
         }
         static public List<Customer> getCustomerList()
         {
             List<Customer> customers = new List<Customer> { };
             DataTable custsData= TKPdb.getAllCustomers();
             foreach (DataRow cust in custsData.Rows)
-                customers.Add(new Customer((int)cust["CustomerId"], (string)cust["email"], (string)cust["fname"], (string)cust["lname"], (string)cust["address"], (string)cust["phoneNum"], (string)cust["position"]));
+            {
+                int id = (int)cust["CustomerId"];
+                string email = (string)cust["email"];
+                string fname = (string)cust["fname"];
+                string lname = (string)cust["lname"];
+                string address = cust["address"] == DBNull.Value ? "" : (string)cust["address"];
+                string phoneNum = cust["phoneNum"] == DBNull.Value ? "" : (string)cust["phoneNum"];
+                string position = cust["position"]== DBNull.Value ? "" : (string)cust["position"];
+                customers.Add(new Customer(id, email, fname, lname, address, phoneNum, position));
+            }
             return customers;
         }
+
         public void save()
         {
             TKPdb.updateCustomer(this);
