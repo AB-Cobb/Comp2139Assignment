@@ -43,11 +43,14 @@ namespace Comp2139Assignment
 
         protected void btnRetrieveSurveyDetails_Click(object sender, EventArgs e)
         {
-            selectedSurvey = surveys[lstbSurvey.SelectedIndex];
-            lblProbResolution.Text = getSurveyText(selectedSurvey.resolution);
-            lblResponseTime.Text = getSurveyText(selectedSurvey.responeseTime);
-            lblTechEfficientcy.Text = getSurveyText(selectedSurvey.efficentcy);
-            txtAdditionalComments.Text = selectedSurvey.comments;
+            if (Page.IsValid)
+            {
+                selectedSurvey = surveys[lstbSurvey.SelectedIndex];
+                lblProbResolution.Text = getSurveyText(selectedSurvey.resolution);
+                lblResponseTime.Text = getSurveyText(selectedSurvey.responeseTime);
+                lblTechEfficientcy.Text = getSurveyText(selectedSurvey.efficentcy);
+                txtAdditionalComments.Text = selectedSurvey.comments;
+            }
             
         }
         private string getSurveyText(int value)

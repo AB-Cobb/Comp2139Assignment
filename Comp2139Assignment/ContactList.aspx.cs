@@ -19,7 +19,9 @@ namespace Comp2139Assignment
             lstbContactList.DataSource = contactList;
             lstbContactList.DataTextField = "contact";
             if (!IsPostBack)
+            {
                 lstbContactList.DataBind();
+            }
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -28,25 +30,43 @@ namespace Comp2139Assignment
             Response.Redirect("~/Login.aspx");
         }
 
+        protected void update_contactList()
+        {
+            
+            contactList = Customer.getContactList();
+            lstbContactList.DataSource = contactList;
+            lstbContactList.DataTextField = "contact";
+            lstbContactList.DataBind(); // */
+        }
+
         protected void btnRemoveContact_Click(object sender, EventArgs e)
         {
-            contactList[lstbContactList.SelectedIndex].onContactList = false;
-            contactList[lstbContactList.SelectedIndex].save();
+            if (Page.IsValid)
+            {
+                contactList[lstbContactList.SelectedIndex].onContactList = false;
+                contactList[lstbContactList.SelectedIndex].save();
+                update_contactList();/*
             contactList = Customer.getContactList();
-            lblStatus.Text = "Contact Removed";
-            lblStatus.Visible = true;
+            lstbContactList.DataTextField = "contact";
+            lstbContactList.DataBind(); // */
+                lblStatus.Text = "Contact Removed";
+                lblStatus.Visible = true;
+            }
         }
 
         protected void btnClearList_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < contactList.Count; i++)
+            if (Page.IsValid)
             {
-                contactList[i].onContactList = false;
-                contactList[i].save();
+                for (int i = 0; i < contactList.Count; i++)
+                {
+                    contactList[i].onContactList = false;
+                    contactList[i].save();
+                }
+                update_contactList();
+                lblStatus.Text = "List Cleared";
+                lblStatus.Visible = true;
             }
-            contactList = Customer.getContactList();
-            lblStatus.Text = "List Cleared";
-            lblStatus.Visible = true;
         }
 
         protected void lstbContactList_SelectedIndexChanged(object sender, EventArgs e)

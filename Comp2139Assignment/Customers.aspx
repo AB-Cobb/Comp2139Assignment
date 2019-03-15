@@ -48,6 +48,7 @@
                 <tr>
                     <td>
                         <asp:ListBox ID="lstbCustomers" runat="server" AutoPostBack="True" Width="400px" OnSelectedIndexChanged="lstbCustomers_SelectedIndexChanged"></asp:ListBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbCustomers" ErrorMessage="Please Select a Customer"></asp:RequiredFieldValidator>
                         <asp:Label ID="lblAddToContactList" runat="server" ForeColor="#009900" Text="Customer Added To Contact List" Visible="False"></asp:Label>
                     </td>
                     <td>&nbsp;</td>

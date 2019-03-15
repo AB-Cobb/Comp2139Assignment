@@ -72,6 +72,7 @@
                 <tr>
                     <td class="auto-style2" colspan="2">
                         <asp:ListBox ID="lstbIncident" runat="server" Width="600px" OnSelectedIndexChanged="lstbIncident_SelectedIndexChanged"></asp:ListBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbIncident" Display="None" ErrorMessage="Please Select an Incident"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style2"></td>
                 </tr>

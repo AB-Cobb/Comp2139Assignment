@@ -75,6 +75,7 @@
         <tr>
             <td colspan="2">
                 <asp:ListBox ID="lstbSurvey" runat="server" Rows="8" Width="600px" OnSelectedIndexChanged="lstbSurvey_SelectedIndexChanged"></asp:ListBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbSurvey" ErrorMessage="Please Select a Survey"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>

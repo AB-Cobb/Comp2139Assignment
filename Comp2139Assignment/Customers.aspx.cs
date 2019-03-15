@@ -30,9 +30,12 @@ namespace Comp2139Assignment
 
         protected void btnAddToContactList_Click(object sender, EventArgs e)
         {
-            customers[lstbCustomers.SelectedIndex].onContactList = true;
-            customers[lstbCustomers.SelectedIndex].save();
-            lblAddToContactList.Visible = true;
+            if (Page.IsValid)
+            {
+                customers[lstbCustomers.SelectedIndex].onContactList = true;
+                customers[lstbCustomers.SelectedIndex].save();
+                lblAddToContactList.Visible = true;
+            }
         }
 
         protected void btnDisplayContactList_Click(object sender, EventArgs e)

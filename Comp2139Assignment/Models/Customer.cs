@@ -110,7 +110,7 @@ namespace Comp2139Assignment
             this.address = address;
             this.phoneNum = null;
             this.position = null;
-            this.onContactList = false;
+            this.onContactList = onContactList;
         }
 
         private Customer(int customerId, string email, string fname, string lname, string address, string phoneNum, string position, bool onContactList = false)

@@ -50,7 +50,7 @@ namespace Comp2139Assignment
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
-            if (lstbIncident.SelectedIndex >= 0)
+            if (Page.IsValid)
             {
                 Incident incident = incidents[lstbIncident.SelectedIndex];
                 lblCustomerID.Text = Convert.ToString(incident.customerId);

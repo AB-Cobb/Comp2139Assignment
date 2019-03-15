@@ -73,6 +73,7 @@
         <tr>
             <td class="auto-style3">
                 <asp:Label ID="lblStatus" runat="server" ForeColor="#009900" Text="(Status)" Visible="False"></asp:Label>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbContactList" ErrorMessage="Please Select a Contact"></asp:RequiredFieldValidator>
             </td>
             <td class="auto-style5">&nbsp;</td>
             <td>&nbsp;</td>
