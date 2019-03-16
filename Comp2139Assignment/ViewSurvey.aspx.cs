@@ -38,7 +38,7 @@ namespace Comp2139Assignment
 
         protected void lstbSurvey_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+
         }
 
         protected void btnRetrieveSurveyDetails_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Comp2139Assignment
                 lblTechEfficientcy.Text = getSurveyText(selectedSurvey.efficentcy);
                 txtAdditionalComments.Text = selectedSurvey.comments;
             }
-            
+
         }
         private string getSurveyText(int value)
         {
@@ -80,4 +80,4 @@ namespace Comp2139Assignment
             lstbSurvey.DataBind();
         }
     }
-}
+}   

@@ -32,7 +32,7 @@ namespace Comp2139Assignment
 
         protected void update_contactList()
         {
-            
+
             contactList = Customer.getContactList();
             lstbContactList.DataSource = contactList;
             lstbContactList.DataTextField = "contact";
@@ -71,7 +71,7 @@ namespace Comp2139Assignment
 
         protected void lstbContactList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnDisplayContactList_Click(object sender, EventArgs e)

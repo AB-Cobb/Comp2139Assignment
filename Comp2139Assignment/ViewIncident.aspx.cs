@@ -26,7 +26,7 @@ namespace Comp2139Assignment
             lstbIncident.DataTextField = "description";
             if (!IsPostBack)
                 lstbIncident.DataBind();
-            
+
             if (Session["Incident"] != null)
             {
                 Incident incident = (Incident)Session["Incident"];
@@ -58,7 +58,7 @@ namespace Comp2139Assignment
                 lblReportDateAndTime.Text = Convert.ToString(incident.date);
                 txtDescription.Text = incident.description;
             }
-           
+
         }
 
         protected void ddlCustomer_SelectedIndexChanged(object sender, EventArgs e)

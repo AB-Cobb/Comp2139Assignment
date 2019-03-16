@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Comp2139Assignment {
-    
-    
-    public partial class Customers {
-        
+namespace Comp2139Assignment
+{
+
+
+    public partial class Customers
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// btnLogout control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogout;
-        
+
         /// <summary>
         /// lstbCustomers control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lstbCustomers;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// lblAddToContactList control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddToContactList;
-        
+
         /// <summary>
         /// lblAddress control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddress;
-        
+
         /// <summary>
         /// lblPhone control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPhone;
-        
+
         /// <summary>
         /// lblEmail control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail;
-        
+
         /// <summary>
         /// btnAddToContactList control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddToContactList;
-        
+
         /// <summary>
         /// btnDisplayContactList control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDisplayContactList;
-        
+
         /// <summary>
         /// btnBack control.
         /// </summary>
