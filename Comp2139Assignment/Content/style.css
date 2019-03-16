@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    -webkit-box-shadow: 0px 1px 17px -4px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 1px 17px -4px rgba(0,0,0,0.6);
+    box-shadow: 0px 1px 17px -4px rgba(0,0,0,0.6);
+}
+
+ul {
+    list-style-type: none;
+}
