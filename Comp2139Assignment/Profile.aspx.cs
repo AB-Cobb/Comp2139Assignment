@@ -62,5 +62,10 @@ namespace Comp2139Assignment
                 // */
             }
         }
+
+        protected void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UpdatePassword.aspx");                                           
+        }
     }
 }

@@ -124,6 +124,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="SurveySuccess.aspx" />
+    <Content Include="UpdatePassword.aspx" />
     <Content Include="Web.config" />
     <Content Include="ViewIncident.aspx" />
     <Content Include="ViewSurvey.aspx" />
@@ -207,6 +208,13 @@
     </Compile>
     <Compile Include="SurveySuccess.aspx.designer.cs">
       <DependentUpon>SurveySuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewIncident.aspx.cs">
       <DependentUpon>ViewIncident.aspx</DependentUpon>

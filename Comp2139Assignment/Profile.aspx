@@ -1,13 +1,15 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Comp2139Assignment.Profile" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
         }
     </style>
 </head>
@@ -62,13 +64,14 @@
                 </tr>
                 <tr>
                     <td>* Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtPassword" runat="server" Width="200px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="You must have a password" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update password" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -103,6 +106,19 @@
                 <tr>
                     <td>Position / Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="txtPosition" runat="server" Width="200px"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">Phone Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<asp:TextBox ID="txtPhoneNum" runat="server" Width="200px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                </tr>
+                <tr>
+                    <td>Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:TextBox ID="txtAddress" runat="server" Width="200px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

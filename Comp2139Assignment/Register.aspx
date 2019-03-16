@@ -12,10 +12,6 @@
         .auto-style2 {
             width: 1031px;
         }
-        .auto-style3 {
-            width: 1031px;
-            height: 30px;
-        }
     </style>
 </head>
 <body>
@@ -100,12 +96,12 @@
                     <td class="auto-style2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">Password:&nbsp;&nbsp;
+                    <td class="auto-style2">Password:&nbsp;&nbsp;
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="200px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">(I have no idea how to make the validation expression for this one)</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -131,9 +127,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPassword" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%&amp;]).{8,12}">Password must be 8-12 Charectors in length, contain atlest 1 Uppercase, contain atleast 1 Special Character</asp:RegularExpressionValidator>
-                    </td>
+                    <td class="auto-style2">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">

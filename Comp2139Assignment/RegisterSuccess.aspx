@@ -46,7 +46,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>(Btw a requirement for this page is apparently to actually EMAIL the specified email account with an containing their first and last name, and a link redirecting them to the login page.)</td>
+                    <td>&nbsp;</td>
                 </tr>
                 </table>
         </div>
