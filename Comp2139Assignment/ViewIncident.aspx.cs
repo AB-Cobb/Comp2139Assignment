@@ -14,7 +14,7 @@ namespace Comp2139Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            if (Session["User"] == null)
+            if (!(Session["User"] != null && ((User)Session["User"]).role == "Technician"))
                 Response.Redirect("~/Login.aspx");
             customers = Customer.getCustomerList();
             ddlCustomer.DataSource = customers;

@@ -26,6 +26,16 @@ namespace Comp2139Assignment
         }
         public string methodOfContact { get; set; }
 
+        private Incident(int customerId, int incidentId, DateTime date, string status, string description,  string methodOfContact)
+        {
+            this.customerId = customerId;
+            this.incidentId = incidentId;
+            this.date = date;
+            this.status = status;
+            this.description = description;
+            this.methodOfContact = methodOfContact;
+        }
+
         public Incident (int customerId, string description, string methodOfContact)
         {
             this.customerId = customerId;
@@ -34,6 +44,13 @@ namespace Comp2139Assignment
             this.status = "Open";
             this.date = DateTime.Today;
         }
+
+        public static Incident getIncidentById(int incidentId)
+        {
+            DataRow incid = TKPdb.getIncidentById(incidentId);
+            return new Incident((int)incid["CustomerId"], incidentId, (DateTime)incid["Date"], (string)incid["status"], (string)incid["description"],(string)incid["methodOfContact"]);
+        }
+
         private Incident(int incidentId, int customerId, string description, string methodOfContact, DateTime date, string status)
         {
             this.incidentId = incidentId;

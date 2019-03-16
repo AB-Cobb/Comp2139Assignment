@@ -26,6 +26,12 @@ namespace Comp2139Assignment
                     _comments = value;
             }
         }
+        public string title
+        { get
+            {
+                return $"{surveyId}: {Incident.getIncidentById(this.incidentId).description}";
+            }
+        }
 
         public Survey (int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
         {
@@ -40,6 +46,7 @@ namespace Comp2139Assignment
         private Survey (int surveyId, int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
         {
             this.surveyId = surveyId;
+            this.incidentId = incidentId;
             this.responeseTime = responeseTime;
             this.efficentcy = efficentcy;
             this.resolution = resolution;

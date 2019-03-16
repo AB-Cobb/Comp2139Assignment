@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6 text-center"><asp:Label ID="lblStatus" runat="server" ForeColor="#009900" Text="(Status)" Visible="False"></asp:Label></div>
                 <div class="col-md-6"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbContactList" ErrorMessage="Please Select a Contact"></asp:RequiredFieldValidator></div>
-                <div class="col-md-12"><asp:Button ID="btnDisplayContactList" runat="server" CausesValidation="False" Text="Display Contact List" PostBackUrl="~/Customers.aspx" OnClick="btnDisplayContactList_Click"/></div>
+                <div class="col-md-12"><asp:Button ID="btnBackToCustomers" runat="server" CausesValidation="False" Text="Back" PostBackUrl="~/Customers.aspx" OnClick="btnDisplayContactList_Click"/></div>
             </div>
         </div>
     </form>

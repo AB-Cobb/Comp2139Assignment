@@ -11,7 +11,7 @@ namespace Comp2139Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["User"] == null)
+            if (!(Session["User"] != null && ((User)Session["User"]).role == "Client"))
                 Response.Redirect("~/Login.aspx");
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             Survey survey = (Survey)Session["Survey"];

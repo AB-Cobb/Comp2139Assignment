@@ -15,7 +15,7 @@ namespace Comp2139Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            if (Session["User"] == null)
+            if (!(Session["User"] != null && ((User)Session["User"]).role == "Admin"))
                 Response.Redirect("~/Login.aspx");
             customers = Customer.getCustomerList();
             ddlCustomers.DataSource = customers;
@@ -26,7 +26,7 @@ namespace Comp2139Assignment
             lstbSurvey.DataSource = surveys;
             if (!IsPostBack)
                 lstbSurvey.DataBind();
-            lstbSurvey.DataTextField = "surveyId";
+            lstbSurvey.DataTextField = "title";
             txtCustomer.Text = Convert.ToString(customers[ddlCustomers.SelectedIndex].customerId);
         }
 
@@ -76,7 +76,7 @@ namespace Comp2139Assignment
         {
             surveys = Survey.getSurveysByCustomerId(Customer.getCustomerByEmail(customers[ddlCustomers.SelectedIndex].email).customerId);
             lstbSurvey.DataSource = surveys;
-            lstbSurvey.DataTextField = "surveyId";
+            lstbSurvey.DataTextField = "title";
             lstbSurvey.DataBind();
         }
     }

@@ -13,7 +13,7 @@ namespace Comp2139Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            if (Session["User"] == null)
+            if (!(Session["User"] != null && ( ((User)Session["User"]).role == "Admin"  || ((User)Session["User"]).role == "Technician")) )
                 Response.Redirect("~/Login.aspx");
             contactList = Customer.getContactList();
             lstbContactList.DataSource = contactList;
@@ -76,7 +76,7 @@ namespace Comp2139Assignment
 
         protected void btnDisplayContactList_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Customers.aspx");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Comp2139Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            if (Session["User"] == null)
+            if (!(Session["User"] != null && ((User)Session["User"]).role == "Client"))
                 Response.Redirect("~/Login.aspx");
             txtCustomerID.Text = Convert.ToString(Customer.getCustomerByEmail( ((User)Session["User"]).email).customerId);
             incidents = Incident.getIncidentsByCustomerEmail(((User)Session["User"]).email);

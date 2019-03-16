@@ -52,6 +52,20 @@ namespace Comp2139Assignment
             conection.Close();
             return cust.Rows[0];
         }
+        static public DataRow getIncidentById(int id)
+        {
+           
+            conection.Open();
+            SqlCommand cmdGetIncidentById = conection.CreateCommand();
+            cmdGetIncidentById.CommandType = CommandType.Text;
+            cmdGetIncidentById.Parameters.AddWithValue("@incidentId", id);
+            cmdGetIncidentById.CommandText = "SELECT * FROM incident WHERE incidentId = @incidentId;";
+            DataTable incid = new DataTable();
+            SqlDataAdapter sAdapter = new SqlDataAdapter(cmdGetIncidentById);
+            sAdapter.Fill(incid);
+            conection.Close();
+            return incid.Rows[0];
+        }
 
         static public DataRow getCustomerByEmail(string email)
         {

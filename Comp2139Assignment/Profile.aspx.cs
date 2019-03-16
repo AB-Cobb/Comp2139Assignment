@@ -14,7 +14,7 @@ namespace Comp2139Assignment
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                if (Session["User"] == null)
+                if (!(Session["User"] != null && ((User)Session["User"]).role == "Client" ) )
                     Response.Redirect("~/Login.aspx");
                 else
                 {
