@@ -22,11 +22,12 @@ namespace Comp2139Assignment
             ddlCustomers.DataTextField = "name";
             if (!IsPostBack)
                 ddlCustomers.DataBind();
+            int index = ddlCustomers.SelectedIndex;
             surveys = Survey.getSurveysByCustomerId(Customer.getCustomerByEmail(customers[ddlCustomers.SelectedIndex].email).customerId);
+            lstbSurvey.DataTextField = "title";
             lstbSurvey.DataSource = surveys;
             if (!IsPostBack)
                 lstbSurvey.DataBind();
-            lstbSurvey.DataTextField = "title";
             txtCustomer.Text = Convert.ToString(customers[ddlCustomers.SelectedIndex].customerId);
         }
 
@@ -50,6 +51,11 @@ namespace Comp2139Assignment
                 lblResponseTime.Text = getSurveyText(selectedSurvey.responeseTime);
                 lblTechEfficientcy.Text = getSurveyText(selectedSurvey.efficentcy);
                 txtAdditionalComments.Text = selectedSurvey.comments;
+                if (surveys[lstbSurvey.SelectedIndex].contactMe != null)
+                {
+                    lblContact.Text = "Yes";
+                    lblmethodContact.Text = surveys[lstbSurvey.SelectedIndex].contactMe;
+                }
             }
 
         }

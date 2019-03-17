@@ -13,7 +13,7 @@ namespace Comp2139Assignment
         //public string profileName { get; set; }
         public string name {  get
             {
-                return fname + " " + lname;
+                return $"{customerId}: {lname}, {fname}";
             }
         }
         public string contact

@@ -208,7 +208,8 @@ namespace Comp2139Assignment
             getIncidentsByCustmerEmail.CommandType = CommandType.Text;
             getIncidentsByCustmerEmail.Parameters.AddWithValue("@email", email);
             getIncidentsByCustmerEmail.CommandText = "SELECT * FROM incident i WHERE customerid LIKE (SELECT customerid FROM customer WHERE email LIKE @email)" +
-                " AND i.incidentId NOT IN (SELECT s.incidentId FROM Survey s);";
+                " AND i.incidentId NOT IN (SELECT s.incidentId FROM Survey s)" +
+                " AND i.Status LIKE 'Closed';";
             DataTable custList = new DataTable();
             SqlDataAdapter sAdapter = new SqlDataAdapter(getIncidentsByCustmerEmail);
             sAdapter.Fill(custList);
@@ -222,7 +223,7 @@ namespace Comp2139Assignment
             SqlCommand cmdCheckLogin = conection.CreateCommand();
             cmdCheckLogin.Parameters.AddWithValue("@email", email);
             cmdCheckLogin.Parameters.AddWithValue("@password", password);
-            cmdCheckLogin.CommandText = $"SELECT * FROM [user] WHERE Email = @email AND password like @password;";
+            cmdCheckLogin.CommandText = $"SELECT * FROM [user] WHERE Email = @email AND password = @password;";
             DataTable userData = new DataTable();
                 SqlDataAdapter sAdapter = new SqlDataAdapter(cmdCheckLogin);
             sAdapter.Fill(userData);
@@ -315,7 +316,8 @@ namespace Comp2139Assignment
                 cmdUpdateSurvey.Parameters.AddWithValue("@responeseTime", survey.responeseTime);
                 cmdUpdateSurvey.Parameters.AddWithValue("@efficentcy", survey.efficentcy);
                 cmdUpdateSurvey.Parameters.AddWithValue("@comments", survey.comments);
-                cmdUpdateSurvey.CommandText = "UPDATE survey SET resolution = @resolution, ResponseTime = @responeseTime, efficentcy = @efficentcy, comments = @comments WHERE surveyId = @surveyId;";
+                cmdUpdateSurvey.Parameters.AddWithValue("@contactMe", survey.contactMe);
+                cmdUpdateSurvey.CommandText = "UPDATE survey SET resolution = @resolution, ResponseTime = @responeseTime, efficentcy = @efficentcy, comments = @comments, contactMe = @contactMe WHERE surveyId = @surveyId;";
                 cmdUpdateSurvey.ExecuteNonQuery();
             }
             else
@@ -327,7 +329,8 @@ namespace Comp2139Assignment
                 cmdCreateSurvey.Parameters.AddWithValue("@responeseTime", survey.responeseTime);
                 cmdCreateSurvey.Parameters.AddWithValue("@efficentcy", survey.efficentcy);
                 cmdCreateSurvey.Parameters.AddWithValue("@comments", survey.comments);
-                cmdCreateSurvey.CommandText = "INSERT INTO survey(incidentId, resolution, ResponseTime, efficentcy, comments) VALUES( @incidentId, @resolution, @responeseTime, @efficentcy, @comments);";
+                cmdCreateSurvey.Parameters.AddWithValue("@contactMe", survey.contactMe);
+                cmdCreateSurvey.CommandText = "INSERT INTO survey(incidentId, resolution, ResponseTime, efficentcy, comments, contactMe) VALUES( @incidentId, @resolution, @responeseTime, @efficentcy, @comments, @contactMe);";
                 cmdCreateSurvey.ExecuteNonQuery();
             }
             /*

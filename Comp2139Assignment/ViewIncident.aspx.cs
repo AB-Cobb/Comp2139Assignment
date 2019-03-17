@@ -56,7 +56,17 @@ namespace Comp2139Assignment
                 lblCustomerID.Text = Convert.ToString(incident.customerId);
                 lblIncidentNumber.Text = Convert.ToString(incident.incidentId);
                 lblReportDateAndTime.Text = Convert.ToString(incident.date);
+                Status.Text = incident.status;
+                btnStatus.Enabled = true;
                 txtDescription.Text = incident.description;
+                if (incident.status == "Open")
+                {
+                    btnStatus.Text = "Close Incindent";
+                }
+                else
+                {
+                    btnStatus.Text = "Re-Open Incindent";
+                }
             }
 
         }
@@ -72,6 +82,23 @@ namespace Comp2139Assignment
         protected void lstbIncident_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lstbIncident.SelectedIndex;
+        }
+
+        protected void btnStatus_Click(object sender, EventArgs e)
+        {
+            Incident incident = incidents[lstbIncident.SelectedIndex];
+            if (incident.status == "Open")
+            {
+                incident.status = "Closed";
+                btnStatus.Text = "Re-Open Incindent";
+            }
+            else
+            {
+                incident.status = "Open";
+                btnStatus.Text = "Close Incindent";
+            }
+            Status.Text = incident.status;
+            incident.save();
         }
     }
 }

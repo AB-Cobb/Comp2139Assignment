@@ -94,13 +94,13 @@ namespace Comp2139Assignment {
         protected global::System.Web.UI.WebControls.Label lblResponseTime;
         
         /// <summary>
-        /// Label1 control.
+        /// lblContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblContact;
         
         /// <summary>
         /// lblTechEfficientcy control.
@@ -112,13 +112,13 @@ namespace Comp2139Assignment {
         protected global::System.Web.UI.WebControls.Label lblTechEfficientcy;
         
         /// <summary>
-        /// Label2 control.
+        /// lblmethodContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblmethodContact;
         
         /// <summary>
         /// lblProbResolution control.

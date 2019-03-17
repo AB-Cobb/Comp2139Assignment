@@ -84,6 +84,7 @@
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PasswordReset.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterSuccess.aspx" />
@@ -174,6 +175,13 @@
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\TKPdb.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="PasswordReset.aspx.cs">
+      <DependentUpon>PasswordReset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReset.aspx.designer.cs">
+      <DependentUpon>PasswordReset.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

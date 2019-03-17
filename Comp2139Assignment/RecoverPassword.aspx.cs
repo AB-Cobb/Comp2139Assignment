@@ -42,21 +42,21 @@ namespace Comp2139Assignment
             cust = Customer.getCustomerByEmail(txtEmail.Text);
             if (txtAnswer.Text == cust.secretAnswer)
             {
-                // Display Message telling user they will receive email with new password
+                
                 Random rand = new Random();
                 string pw = "";
                 char randChar;
                 for (int i = 0; i < 8; i++)
                 {
-                    randChar = Convert.ToChar(rand.Next(35, 123));
-                    //randChar = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * rand.NextDouble() + 65)));
+                    randChar = Convert.ToChar(rand.Next(35, 123));// generate radom char
                     pw += randChar;
                 }
                 Comp2139Assignment.User.updatePW(txtEmail.Text, pw);
+                // Display Message telling user they will receive email with new password
                 string messsage = "<h1>Your New Tech Know Pro Password</h1><br>Your password has been reset to " +
                     $"<br>{pw}<br>";
                 TKPemail.sendEmail(txtEmail.Text, "Tech Know Pro Password Reset", messsage);
-                Response.Redirect("~/login.aspx");
+                Response.Redirect("~/PasswordReset.aspx");
             }
         }
     }

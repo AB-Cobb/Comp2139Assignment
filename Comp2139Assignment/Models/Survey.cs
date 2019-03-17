@@ -33,7 +33,7 @@ namespace Comp2139Assignment
             }
         }
 
-        public Survey (int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
+        public Survey (int incidentId, int responeseTime, int efficentcy, int resolution, string comments, string contactMe)
         {
             this.surveyId = -1;
             this.incidentId = incidentId;
@@ -41,9 +41,10 @@ namespace Comp2139Assignment
             this.efficentcy = efficentcy;
             this.resolution = resolution;
             this.comments = comments;
+            this.contactMe = contactMe;
         }
         
-        private Survey (int surveyId, int incidentId, int responeseTime, int efficentcy, int resolution, string comments)
+        private Survey (int surveyId, int incidentId, int responeseTime, int efficentcy, int resolution, string comments, string contactMe)
         {
             this.surveyId = surveyId;
             this.incidentId = incidentId;
@@ -51,19 +52,22 @@ namespace Comp2139Assignment
             this.efficentcy = efficentcy;
             this.resolution = resolution;
             this.comments = comments;
+            this.contactMe = contactMe;
         }
         
 
         static public Survey getSurveyByInicidentId(int incidentId)
         {
             DataRow survey = TKPdb.getSurveyByInicidentId(incidentId);
-            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"]);
+            string contactMe = survey["contactMe"] == DBNull.Value ? "" : (string)survey["contactMe"];
+            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"], contactMe);
         }
 
         static public Survey getSurveyBySurveyId(int surveyId)
         {
             DataRow survey = TKPdb.getSurveyBySurveyId(surveyId);
-            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"]);
+            string contactMe = survey["contactMe"] == DBNull.Value ? "" : (string)survey["contactMe"];
+            return new Survey((int)survey["SurveyId"], (int)survey["IncidentId"], (int)survey["ResponseTime"], (int)survey["Efficentcy"], (int)survey["Resolution"], (string)survey["Comments"], contactMe);
         }
         static public List<Survey> getSurveysByCustomerId(int id)
         {
@@ -77,7 +81,8 @@ namespace Comp2139Assignment
                 int efficentcy = (Byte)survey["Efficentcy"];
                 int resultion = (Byte)survey["Resolution"];
                 string comments = (string)survey["Comments"];
-                surveys.Add(new Survey(surveyid, incidentid, responseTime, efficentcy, resultion, comments));
+                string contactMe = survey["contactMe"] == DBNull.Value ? "" : (string)survey["contactMe"];
+                surveys.Add(new Survey(surveyid, incidentid, responseTime, efficentcy, resultion, comments, contactMe));
             }
             return surveys;
         }

@@ -46,7 +46,9 @@
                         </div>
                         <div class="row text-center">
                             <div class="col-md-12">
-                            <asp:Label ID="Status" runat="server" Text="(Open or Closed)"></asp:Label></div>
+                            <asp:Label ID="Status" runat="server" Text="(Open or Closed)"></asp:Label>
+                                <asp:Button ID="btnStatus" class="btn btn-secondary" runat="server" Text="Close Incident" Enabled="False" OnClick="btnStatus_Click" />
+                            </div>
                             <div class="col-md-12"><asp:TextBox ID="txtDescription" runat="server" Height="218px" ReadOnly="True" Width="553px" TextMode="MultiLine"></asp:TextBox></div>
                         </div>
                        

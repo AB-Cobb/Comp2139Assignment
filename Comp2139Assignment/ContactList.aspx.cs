@@ -56,8 +56,7 @@ namespace Comp2139Assignment
 
         protected void btnClearList_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            {
+
                 for (int i = 0; i < contactList.Count; i++)
                 {
                     contactList[i].onContactList = false;
@@ -66,7 +65,7 @@ namespace Comp2139Assignment
                 update_contactList();
                 lblStatus.Text = "List Cleared";
                 lblStatus.Visible = true;
-            }
+            
         }
 
         protected void lstbContactList_SelectedIndexChanged(object sender, EventArgs e)

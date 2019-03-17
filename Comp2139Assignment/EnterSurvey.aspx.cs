@@ -37,7 +37,7 @@ namespace Comp2139Assignment
                 int resTime = getSurveyValue(rblResponseTime.SelectedValue);
                 int techEffic = getSurveyValue(rblTechnicianEfficiency.SelectedValue);
                 int probRes = getSurveyValue(rblProblemResolution.SelectedValue);
-                Survey survey = new Survey(incidents[ddlIncidentList.SelectedIndex].incidentId, resTime, techEffic, probRes, txtAdditionalComments.Text);
+                Survey survey = new Survey(incidents[ddlIncidentList.SelectedIndex].incidentId, resTime, techEffic, probRes, txtAdditionalComments.Text, rblContactMe.SelectedValue);
                 survey.saveSurvay();
                 Session["Survey"] = survey;
                 Response.Redirect("~/SurveySuccess.aspx");

@@ -26,7 +26,6 @@ namespace Comp2139Assignment
             if (Page.IsValid)
             {
                 Comp2139Assignment.User.updatePW(((User)Session["User"]).email, txtNewPW.Text);
-                //Display Message to user Here
 
                 Response.Redirect("~/Profile.aspx");
             }

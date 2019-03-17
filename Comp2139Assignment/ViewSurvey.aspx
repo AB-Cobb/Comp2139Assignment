@@ -62,13 +62,13 @@
                         <asp:Label ID="lblResponseTime" runat="server"></asp:Label>
                     </label>
                     <label for="label1" class="col-sm-6 col-form-label">Contact to Discuss Incident: 
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <asp:Label ID="lblContact" runat="server"></asp:Label>
                     </label>
                     <label for="lblTechEfficientcy" class="col-sm-6 col-form-label">Techician Efficiency: 
                         <asp:Label ID="lblTechEfficientcy" runat="server"></asp:Label>
                     </label>
                     <label for="Label2" class="col-sm-6 col-form-label">Preferred Contact Method: 
-                        <asp:Label ID="Label2" runat="server"></asp:Label>
+                        <asp:Label ID="lblmethodContact" runat="server"></asp:Label>
                     </label>
                     <label for="lblProbResolution" class="col-sm-12 col-form-label">Problem Resolution: 
                         <asp:Label ID="lblProbResolution" runat="server"></asp:Label>

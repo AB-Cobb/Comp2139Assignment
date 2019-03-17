@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="/Content/bootstrap.css"/>
     <link rel="stylesheet" href="/Content/style.css"/>
     <style type="text/css">
-        .auto-style2 {
-            margin-left: 0px;
-        }
-        .auto-style3 {
-            margin-left: 6px;
+        .auto-style4 {
+            position: relative;
+            width: 100%;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            left: 0px;
+            top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     </style>
 </head>
@@ -22,12 +27,12 @@
             <h1 class="text-center">Update Password</h1>
             <div class="form-group form-row">
                 <label for="txtNewPW" class="col-md-12 col-form-label">New Password:
-                    <asp:TextBox ID="txtNewPW" class=" form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNewPW" class=" form-control" TextMode="Password" runat="server"></asp:TextBox>
                 </label>
                 <label for="txtNewPWConfirm" class="col-md-12 col-form-label">Comfirm PW:
-                    <asp:TextBox ID="txtNewPWConfirm" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNewPWConfirm" class="form-control" runat="server" AutoCompleteType="Disabled" TextMode="Password" CausesValidation="True"></asp:TextBox>
                 </label>
-                <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ControlToValidate="txtNewPW" Display="Dynamic" ErrorMessage="You must enter a valid password" ForeColor="Red"></asp:RequiredFieldValidator></div>
+                <div class="auto-style4"><asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ControlToValidate="txtNewPW" Display="Dynamic" ErrorMessage="You must enter a valid password" ForeColor="Red"></asp:RequiredFieldValidator></div>
                 <div class="col-md-12"><asp:CompareValidator ID="CompareValidatorConfirmPassword" runat="server" ControlToCompare="txtNewPW" ControlToValidate="txtNewPWConfirm" Display="Dynamic" ErrorMessage="The two passwords do not match" ForeColor="Red"></asp:CompareValidator></div>
                 <div class="col-md-12"><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtNewPW" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationExpression="(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%&amp;]).{8,12}">Password must be 8-12 Charectors in length, contain atlest 1 Uppercase, contain atleast 1 Special Character</asp:RegularExpressionValidator></div>
                 <div class="col-md-12 btn-group">

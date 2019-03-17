@@ -42,7 +42,7 @@ namespace Comp2139Assignment
             this.description = description;
             this.methodOfContact = methodOfContact;
             this.status = "Open";
-            this.date = DateTime.Today;
+            this.date = DateTime.Now;
         }
 
         public static Incident getIncidentById(int incidentId)
