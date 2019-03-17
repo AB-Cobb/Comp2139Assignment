@@ -15,7 +15,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
             <table class="auto-style1" style="text-align:center">
                 <tr>
                     <td><h1 style="text-align:center">Login Page</h1></td>
@@ -51,9 +51,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" Width="100px" OnClick="btnLogin_Click"/>
+                        <asp:Button ID="btnLogin" class="btn btn-primary" runat="server" Text="Login" Width="100px" OnClick="btnLogin_Click"/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" Width="100px" CausesValidation="False" OnClick="btnRegister_Click"/>
+                        <asp:Button ID="btnRegister" class="btn btn-secondary" runat="server" Text="Register" Width="100px" CausesValidation="False" OnClick="btnRegister_Click"/>
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="btnForgotPassword" runat="server" CausesValidation="False" Text="Forgot Password?" OnClick="btnForgotPassword_Click" />
+                        <asp:Button ID="btnForgotPassword" class="btn btn-info" runat="server" CausesValidation="False" Text="Forgot Password?" OnClick="btnForgotPassword_Click" />
                     </td>
                 </tr>
             </table>

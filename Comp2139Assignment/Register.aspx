@@ -18,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
             <table class="auto-style1" style="text-align:center">
                 <tr>
                     <td class="auto-style2"><h1>Register</h1></td>
