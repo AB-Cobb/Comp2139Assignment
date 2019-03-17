@@ -84,7 +84,7 @@
                     <asp:ListItem>Contact Via Phone</asp:ListItem>
                 </asp:RadioButtonList>
                 <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit Survey" />
-        
+        </div>
         <div/>
     </form>
 </body>

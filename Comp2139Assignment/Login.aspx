@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="/Content/bootstrap.css"/>
-    <link rel="stylesheet" href="/Content/style.css"/>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" runat="server"/>
+    <link rel="stylesheet" href="~/Content/style.css" runat="server"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;

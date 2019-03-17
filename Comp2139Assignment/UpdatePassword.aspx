@@ -25,7 +25,7 @@
                     <asp:TextBox ID="txtNewPW" class=" form-control" runat="server"></asp:TextBox>
                 </label>
                 <label for="txtNewPWConfirm" class="col-md-12 col-form-label">Comfirm PW:
-                    <asp:TextBox ID="txtNewPWConfirm" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNewPWConfirm" TextMode="Password" class="form-control" runat="server"></asp:TextBox>
                 </label>
                 <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ControlToValidate="txtNewPW" Display="Dynamic" ErrorMessage="You must enter a valid password" ForeColor="Red"></asp:RequiredFieldValidator></div>
                 <div class="col-md-12"><asp:CompareValidator ID="CompareValidatorConfirmPassword" runat="server" ControlToCompare="txtNewPW" ControlToValidate="txtNewPWConfirm" Display="Dynamic" ErrorMessage="The two passwords do not match" ForeColor="Red"></asp:CompareValidator></div>
