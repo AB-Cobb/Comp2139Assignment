@@ -42,7 +42,7 @@
                                 <asp:TextBox ID="txtUsername" runat="server" TextMode="Email" Enabled="False"></asp:TextBox>
                             </label>
                             <div class="col-sm-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" runat="server" ControlToValidate="txtUsername" Display="Dynamic" ErrorMessage="You must have a username" ForeColor="Red"></asp:RequiredFieldValidator></div>
-                            <div class="col-sm-12"><asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update password" CausesValidation="False" ValidateRequestMode="Disabled" /></div>
+                            <div class="col-sm-12"><asp:Button class="btn btn-primary" ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update password" CausesValidation="False" ValidateRequestMode="Disabled" /></div>
 
                         </div>
                     <h4>Contact Information</h4>
@@ -87,7 +87,7 @@
                             </label>
                             <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="You must provide an email address" ForeColor="Red"></asp:RequiredFieldValidator></div>
                             <div class="col-md-12"><p>*means a mandatory field</p></div>
-                            <div class="col-md-12"><asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClick="btnUpdate_Click" /></div>
+                            <div class="col-md-12"><asp:Button class="btn btn-primary" ID="btnUpdate" runat="server" Text="Update Profile" OnClick="btnUpdate_Click" /></div>
                         </div>
                         
                         

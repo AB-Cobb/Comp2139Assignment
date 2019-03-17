@@ -61,7 +61,7 @@
                     <label for="lblResponseTime" class="col-sm-6 col-form-label">Response Time: 
                         <asp:Label ID="lblResponseTime" runat="server"></asp:Label>
                     </label>
-                    <label for="lblResponseTime" class="col-sm-6 col-form-label">Contact to Discuss Incident: 
+                    <label for="label1" class="col-sm-6 col-form-label">Contact to Discuss Incident: 
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                     </label>
                     <label for="lblTechEfficientcy" class="col-sm-6 col-form-label">Techician Efficiency: 

@@ -1,7 +1,15 @@
-﻿body {
+﻿html{
+    min-height: 100vh;
+}
+
+body {
+    background: rgb(126,142,161);
+    background: linear-gradient(159deg, rgba(126,142,161,1) 15%, rgba(255,150,129,1) 100%);
+    min-height: 100vh;
 }
 
 .container {
+    background-color: #f9f9f9;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 5px;
