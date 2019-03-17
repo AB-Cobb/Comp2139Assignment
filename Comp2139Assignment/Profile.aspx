@@ -47,14 +47,14 @@
                         </div>
                     <h4>Contact Information</h4>
                         <div class="form-row">
-                            <label for="txtFirstName" class="col-sm-12 col-form-label">*First Name:
+                            <label for="txtFirstName" class="col-sm-12 col-form-label">First Name*:
                                 <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
                             </label>
 
                             <div class="col-sm-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorFirstName" runat="server" ControlToValidate="txtFirstName" Display="Dynamic" ErrorMessage="First Name cannot be left blank" ForeColor="Red"></asp:RequiredFieldValidator></div>
                             <div class="col-sm-12"><asp:RegularExpressionValidator ID="RegularExpressionValidatorFirstName" runat="server" ControlToValidate="txtFirstName" Display="Dynamic" ErrorMessage="First Name must contain only letters" ForeColor="Red" ValidationExpression="^[A-Za-z]+$"></asp:RegularExpressionValidator></div>
                             
-                            <label for="txtLastName" class="col-sm-12 col-form-label">*Last Name:
+                            <label for="txtLastName" class="col-sm-12 col-form-label">Last Name*:
                                 <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
                             </label>
 
@@ -82,11 +82,11 @@
                             <label for="txtSecretAwnser" class="col-sm-12 col-form-label">Secret Answer:
                                 <asp:TextBox ID="txtSecretAwnser" runat="server"></asp:TextBox>
                             </label>
-                            <label for="txtEmail" class="col-sm-12 col-form-label">*Email Address:
+                            <label for="txtEmail" class="col-sm-12 col-form-label">Email Address*:
                                 <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                             </label>
                             <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="You must provide an email address" ForeColor="Red"></asp:RequiredFieldValidator></div>
-                            <div class="col-md-12"><p>*means a mandatory field</p></div>
+                            <div class="col-md-12"><p>* Means a mandatory field</p></div>
                             <div class="col-md-12"><asp:Button class="btn btn-primary" ID="btnUpdate" runat="server" Text="Update Profile" OnClick="btnUpdate_Click" /></div>
                         </div>
                         
