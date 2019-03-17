@@ -41,7 +41,7 @@
                             <div class="col-md-6"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbCustomers" ErrorMessage="Please Select a Customer"></asp:RequiredFieldValidator></div>
                             <div class="btn-group col-md-12 text-center mx-auto">
                             <div><asp:Button ID="btnAddToContactList" runat="server" OnClick="btnAddToContactList_Click" Text="Add To Contact List" /></div>
-                            <div><asp:Button ID="btnDisplayContactList" runat="server" OnClick="btnDisplayContactList_Click" Text="Display Contact List" /></div>
+                            <div><asp:Button ID="btnDisplayContactList" runat="server" OnClick="btnDisplayContactList_Click" Text="Display Contact List" CausesValidation="False"  /></div>
                             </div>
                         </div>
                        

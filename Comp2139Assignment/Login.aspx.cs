@@ -46,5 +46,10 @@ namespace Comp2139Assignment
                 
             }
         }
+
+        protected void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/RecoverPassword.aspx");
+        }
     }
 }

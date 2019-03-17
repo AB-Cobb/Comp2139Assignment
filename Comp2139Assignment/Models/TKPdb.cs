@@ -39,6 +39,21 @@ namespace Comp2139Assignment
             return custList;
         }
 
+        static public void updatePassword(string email, string password)
+        {
+            if (checkUserName(email))
+            {
+                conection.Open();
+                SqlCommand cmdUpdatePassword = conection.CreateCommand();
+                cmdUpdatePassword.CommandType = CommandType.Text;
+                cmdUpdatePassword.Parameters.AddWithValue("@email", email);
+                cmdUpdatePassword.Parameters.AddWithValue("@password", password);
+                cmdUpdatePassword.CommandText = "UPDATE [user] SET password = @password WHERE email like @email";
+                cmdUpdatePassword.ExecuteNonQuery();
+                conection.Close();
+            }
+        }
+
         static public DataRow getCustomerById(int id)
         {
             conection.Open();
@@ -96,8 +111,12 @@ namespace Comp2139Assignment
                 cmdUpdateCustomer.Parameters.AddWithValue("@address", cust.address);
                 cmdUpdateCustomer.Parameters.AddWithValue("@phoneNum", String.IsNullOrEmpty(cust.phoneNum) ? SqlString.Null : cust.phoneNum);
                 cmdUpdateCustomer.Parameters.AddWithValue("@position", String.IsNullOrEmpty(cust.position) ? SqlString.Null : cust.position);
+                cmdUpdateCustomer.Parameters.AddWithValue("@secretQuestion", String.IsNullOrEmpty(cust.secretQuestion) ? SqlString.Null : cust.secretQuestion);
+                cmdUpdateCustomer.Parameters.AddWithValue("@secretAnswer", String.IsNullOrEmpty(cust.secretAnswer) ? SqlString.Null : cust.secretAnswer);
                 cmdUpdateCustomer.Parameters.AddWithValue("@OnContactList", cust.onContactList);
-                cmdUpdateCustomer.CommandText = "UPDATE customer SET Fname = @fname, Lname = @lname, Address = @Address, Position = @position, OnContactList = @OnContactList WHERE CustomerId = @customerId ;";
+                cmdUpdateCustomer.CommandText = "UPDATE customer SET Fname = @fname, Lname = @lname, Address = @Address, PhoneNum = @phoneNum,  Position = @position, SecretQuestion = @secretQuestion, SecretAnswer = @secretAnswer, OnContactList = @OnContactList" +
+
+                    " WHERE CustomerId = @customerId ;";
                 cmdUpdateCustomer.ExecuteNonQuery();
             }
             else
@@ -175,6 +194,21 @@ namespace Comp2139Assignment
             getIncidentsByCustmerEmail.CommandType = CommandType.Text;
             getIncidentsByCustmerEmail.Parameters.AddWithValue("@email", email);
             getIncidentsByCustmerEmail.CommandText = "SELECT * FROM incident WHERE customerid LIKE (SELECT customerid FROM customer WHERE email LIKE @email);";
+            DataTable custList = new DataTable();
+            SqlDataAdapter sAdapter = new SqlDataAdapter(getIncidentsByCustmerEmail);
+            sAdapter.Fill(custList);
+            conection.Close();
+            return custList;
+        }
+
+        static public DataTable getIncidentsForSurvey(string email)
+        {
+            conection.Open();
+            SqlCommand getIncidentsByCustmerEmail = conection.CreateCommand();
+            getIncidentsByCustmerEmail.CommandType = CommandType.Text;
+            getIncidentsByCustmerEmail.Parameters.AddWithValue("@email", email);
+            getIncidentsByCustmerEmail.CommandText = "SELECT * FROM incident i WHERE customerid LIKE (SELECT customerid FROM customer WHERE email LIKE @email)" +
+                " AND i.incidentId NOT IN (SELECT s.incidentId FROM Survey s);";
             DataTable custList = new DataTable();
             SqlDataAdapter sAdapter = new SqlDataAdapter(getIncidentsByCustmerEmail);
             sAdapter.Fill(custList);

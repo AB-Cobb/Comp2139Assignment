@@ -10,7 +10,7 @@ namespace Comp2139Assignment
     {
         public int customerId { get; private set; }
         public string email { get; private set; }
-        public string profileName { get; set; }
+        //public string profileName { get; set; }
         public string name {  get
             {
                 return fname + " " + lname;
@@ -99,6 +99,22 @@ namespace Comp2139Assignment
                     _position = value;
             }
         }// */
+        public string secretQuestion { get; set; }
+        private string _secretAnswer;
+        public string secretAnswer
+        {
+            get
+            {
+                return _secretAnswer;
+            }
+            set
+            {
+                if (value.Length > 50)
+                    _secretAnswer = value.Substring(0, 50);
+                else
+                    _secretAnswer = value;
+            }
+        }
         public bool onContactList { get; set; }
 
         public Customer(string email, string fname, string lname, string address, bool onContactList = false)
@@ -124,7 +140,20 @@ namespace Comp2139Assignment
             this.position = position;
             this.onContactList = onContactList;
         }
-        
+        private Customer(int customerId, string email, string fname, string lname, string address, string phoneNum, string position, string secretQuestion, string secretAnswer, bool onContactList = false)
+        {
+            this.customerId = customerId;
+            this.email = email;
+            this.fname = fname;
+            this.lname = lname;
+            this.address = address;
+            this.phoneNum = phoneNum;
+            this.position = position;
+            this.secretQuestion = secretQuestion;
+            this.secretAnswer = secretAnswer;
+            this.onContactList = onContactList;
+        }
+
         static public List<Customer> getContactList()
         {
             List<Customer> contactList = new List<Customer> { };
@@ -160,8 +189,11 @@ namespace Comp2139Assignment
             string address = cust["address"] == DBNull.Value ? "" : (string)cust["address"];
             string phoneNum = cust["phoneNum"] == DBNull.Value ? "" : (string)cust["phoneNum"];
             string position = cust["position"] == DBNull.Value ? "" : (string)cust["position"];
-            return new Customer(id, email, fname, lname, address, phoneNum, position);
+            string secretQuestion = cust["secretQuestion"] == DBNull.Value ? "" : (string)cust["secretQuestion"];
+            string secretAnswer = cust["secretAnswer"] == DBNull.Value ? "" : (string)cust["secretAnswer"];
+            return new Customer(id, email, fname, lname, address, phoneNum, position, secretQuestion, secretAnswer);
         }
+
         static public List<Customer> getCustomerList()
         {
             List<Customer> customers = new List<Customer> { };

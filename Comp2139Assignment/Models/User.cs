@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Threading.Tasks;
 
 namespace Comp2139Assignment
 {
     public class User
     {
+
         private string _email;
         public string email { get
             {
@@ -15,7 +17,7 @@ namespace Comp2139Assignment
             private set
             {
                 if (value.Length > 50)
-                    _email = value.Substring(0, 20);
+                    _email = value.Substring(0, 50);
                 else
                     _email = value;
             }
@@ -44,5 +46,6 @@ namespace Comp2139Assignment
         {
             TKPdb.register(email, password, fName, lName);
         }
+        static public void updatePW(string email, string password) => TKPdb.updatePassword(email, password);
     }
 }

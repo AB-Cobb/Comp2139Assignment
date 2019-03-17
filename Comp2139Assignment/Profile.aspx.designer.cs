@@ -58,15 +58,6 @@ namespace Comp2139Assignment {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsername;
         
         /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
-        /// <summary>
         /// btnUpdatePassword control.
         /// </summary>
         /// <remarks>
@@ -173,15 +164,6 @@ namespace Comp2139Assignment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSecretAwnser;
-        
-        /// <summary>
-        /// RequiredFieldValidatorSecretAnswer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSecretAnswer;
         
         /// <summary>
         /// txtEmail control.

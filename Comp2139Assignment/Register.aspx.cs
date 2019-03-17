@@ -26,8 +26,12 @@ namespace Comp2139Assignment
         {
             if (Page.IsValid)
             {
+                string emailMessage = $"<h1>Hello {txtFirstName.Text} {txtLastName.Text}</h1><br>" +
+                    $"We have received your Registration Tech Know Pro incident repoting please for:" +
+                    $" <br> {txtEmail.Text} <br>" +
+                    $"please go to {HttpContext.Current.Request.ApplicationPath} to login";
+                TKPemail.sendEmail(txtEmail.Text, "TKP Registration Received", emailMessage);
                 Comp2139Assignment.User.register(txtEmail.Text, txtPassword.Text, txtFirstName.Text, txtLastName.Text);
-                Session["RegEmail"] = txtEmail.Text;
                 Response.Redirect("~/RegisterSuccess.aspx");
             }
         }

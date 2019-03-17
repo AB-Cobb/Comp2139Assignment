@@ -73,5 +73,14 @@ namespace Comp2139Assignment
                 incidents.Add(new Incident((int)incident["IncidentId"], (int)incident["customerId"], (string)incident["Description"], (string)incident["MethodOfContact"], (DateTime)incident["Date"], (string)incident["status"]));
             return incidents;
         }
+        static public List<Incident> getIncidentsForSurvey(string email)
+        {
+            List<Incident> incidents = new List<Incident> { };
+            DataTable inicedentData = TKPdb.getIncidentsForSurvey(email);
+            foreach (DataRow incident in inicedentData.Rows)
+                incidents.Add(new Incident((int)incident["IncidentId"], (int)incident["customerId"], (string)incident["Description"], (string)incident["MethodOfContact"], (DateTime)incident["Date"], (string)incident["status"]));
+            return incidents;
+        }
+        
     }
 }

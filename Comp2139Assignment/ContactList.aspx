@@ -30,7 +30,7 @@
                 <div class="col-md-12"><asp:ListBox ID="lstbContactList" runat="server" AutoPostBack="True" Rows="8" Width="400px" OnSelectedIndexChanged="lstbContactList_SelectedIndexChanged"></asp:ListBox></div>
                 <div class="btn-group col-md-12 mx-auto">
                     <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" Width="150px" OnClick="btnRemoveContact_Click" />
-                    <asp:Button ID="btnClearList" runat="server" Text="Clear List" OnClick="btnClearList_Click" />
+                    <asp:Button ID="btnClearList" runat="server" Text="Clear List" OnClick="btnClearList_Click" CausesValidation="False" />
                 </div>
                 <div class="col-md-6 text-center"><asp:Label ID="lblStatus" runat="server" ForeColor="#009900" Text="(Status)" Visible="False"></asp:Label></div>
                 <div class="col-md-6"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbContactList" ErrorMessage="Please Select a Contact"></asp:RequiredFieldValidator></div>

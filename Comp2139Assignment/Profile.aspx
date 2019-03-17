@@ -11,6 +11,12 @@
         .auto-style2 {
             height: 23px;
         }
+        .auto-style3 {
+            margin-left: 12px;
+        }
+        .auto-style4 {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -50,35 +56,35 @@
                 </tr>
                 <tr>
                     <td>Profile Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtProfileName" runat="server" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txtProfileName" runat="server" Width="200px" Enabled="False"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>* Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtUsername" runat="server" Width="200px" TextMode="Email"></asp:TextBox>
+                    <td>&nbsp;Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtUsername" runat="server" Width="200px" TextMode="Email" Enabled="False"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" runat="server" ControlToValidate="txtUsername" Display="Dynamic" ErrorMessage="You must have a username" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>* Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="txtPassword" runat="server" Width="200px"></asp:TextBox>
+                    <td>&nbsp;&nbsp; &nbsp;
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update password" />
+                        <asp:Button ID="btnUpdatePassword" runat="server" OnClick="btnUpdatePassword_Click" Text="Update password" CausesValidation="False" ValidateRequestMode="Disabled" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td><h4>Contact Information</h4></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2"><h4>Contact Information</h4></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -124,8 +130,8 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>* Secret Question:&nbsp;&nbsp;
-                        <asp:DropDownList ID="ddlSecretQuestion" runat="server" Height="16px" Width="200px">
+                    <td>Secret Question:&nbsp;&nbsp;
+                        <asp:DropDownList ID="ddlSecretQuestion" runat="server" Height="16px" Width="200px" CssClass="auto-style3">
                             <asp:ListItem>What was the name of the first school you attended?</asp:ListItem>
                             <asp:ListItem>What was the name of your first pet?</asp:ListItem>
                             <asp:ListItem>What is your favourite food?</asp:ListItem>
@@ -137,8 +143,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>*Secret Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtSecretAwnser" runat="server" Width="200px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorSecretAnswer" runat="server" ControlToValidate="txtSecretAwnser" Display="Dynamic" ErrorMessage="You must provide an answer to the secret question" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <td>Secret Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtSecretAwnser" runat="server" Width="200px" CssClass="auto-style4"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

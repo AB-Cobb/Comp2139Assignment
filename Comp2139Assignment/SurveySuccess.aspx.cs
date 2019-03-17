@@ -34,7 +34,7 @@ namespace Comp2139Assignment
 
         protected void btnReturnToSurvey_Click(object sender, EventArgs e)
         {
-            Response.RedirectPermanent("~/Survey.aspx");
+            Response.RedirectPermanent("~/EnterSurvey.aspx");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Comp2139Assignment
             if (!(Session["User"] != null && ((User)Session["User"]).role == "Client"))
                 Response.Redirect("~/Login.aspx");
             txtCustomerID.Text = Convert.ToString(Customer.getCustomerByEmail( ((User)Session["User"]).email).customerId);
-            incidents = Incident.getIncidentsByCustomerEmail(((User)Session["User"]).email);
+            incidents = Incident.getIncidentsForSurvey(((User)Session["User"]).email);
             ddlIncidentList.DataSource = incidents;
             ddlIncidentList.DataTextField = "description";
             if (!IsPostBack)

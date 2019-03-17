@@ -19,17 +19,15 @@ namespace Comp2139Assignment
                 else
                 {
                     Customer customer = Customer.getCustomerByEmail(((User)Session["User"]).email);
-                    /*
-                    User user = (User)Session["User"];
-                    */
-                    txtProfileName.Text = customer.profileName;
+                    txtProfileName.Text = customer.name;
                     txtUsername.Text = customer.email;
-                    //txtPassword.Text = customer.password;
                     txtFirstName.Text = customer.fname;
                     txtLastName.Text = customer.lname;
                     txtPosition.Text = customer.position;
-                    //ddlSecretQuestion.SelectedValue = customer.secretQuestion;
-                    //txtSecretAwnser.Text = customer.secretAnswer;
+                    txtAddress.Text = customer.address;
+                    txtPhoneNum.Text = customer.phoneNum;
+                    ddlSecretQuestion.SelectedValue = customer.secretQuestion;
+                    txtSecretAwnser.Text = customer.secretAnswer;
                     txtEmail.Text = customer.email;
                     // */
                 }
@@ -44,20 +42,21 @@ namespace Comp2139Assignment
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid && Comp2139Assignment.User.login(txtUsername.Text, txtPassword.Text) != null)
+            if (Page.IsValid)
             {
 
                 Customer customer = Customer.getCustomerByEmail(((User)Session["User"]).email);
                 
-                //User user = (User)Session["User"];
-                customer.profileName = txtProfileName.Text;
+
                 customer.fname = txtFirstName.Text;
                 customer.lname = txtLastName.Text;
                 customer.position = txtPosition.Text;
-                //customer.secretQuestion = ddlSecretQuestion.SelectedValue;
-                //customer.secretAnswer = txtSecretAwnser.Text;
+                customer.phoneNum = txtPhoneNum.Text;
+                customer.address = txtAddress.Text;
+                customer.secretQuestion = ddlSecretQuestion.SelectedValue;
+                customer.secretAnswer = txtSecretAwnser.Text;
                 customer.save();
-                //Session["User"] = user;
+
                 Response.Redirect("~/HomePage.aspx");
                 // */
             }

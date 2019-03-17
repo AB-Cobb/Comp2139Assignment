@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="btnForgotPassword" runat="server" CausesValidation="False" Text="Forgot Password?" />
+                        <asp:Button ID="btnForgotPassword" runat="server" CausesValidation="False" Text="Forgot Password?" OnClick="btnForgotPassword_Click" />
                     </td>
                 </tr>
             </table>
