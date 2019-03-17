@@ -28,13 +28,13 @@
             <div class="row text-center">
                 <div class="col-md-12"><p>Contact List:</p></div>
                 <div class="col-md-12"><asp:ListBox ID="lstbContactList" runat="server" AutoPostBack="True" Rows="8" Width="400px" OnSelectedIndexChanged="lstbContactList_SelectedIndexChanged"></asp:ListBox></div>
-                <div class="btn-group col-md-12 mx-auto">
-                    <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" Width="150px" OnClick="btnRemoveContact_Click" />
-                    <asp:Button ID="btnClearList" runat="server" Text="Clear List" OnClick="btnClearList_Click" CausesValidation="False" />
+                <div class="col-md-12 text-center mt-2">
+                    <asp:Button ID="btnRemoveContact" class="btn btn-primary" runat="server" Text="Remove Contact" Width="150px" OnClick="btnRemoveContact_Click" />
+                    <asp:Button ID="btnClearList" class="btn btn-secondary" runat="server" Text="Clear List" OnClick="btnClearList_Click" CausesValidation="False" />
                 </div>
                 <div class="col-md-6 text-center"><asp:Label ID="lblStatus" runat="server" ForeColor="#009900" Text="(Status)" Visible="False"></asp:Label></div>
                 <div class="col-md-6"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbContactList" ErrorMessage="Please Select a Contact"></asp:RequiredFieldValidator></div>
-                <div class="col-md-12"><asp:Button ID="btnBackToCustomers" runat="server" CausesValidation="False" Text="Back" PostBackUrl="~/Customers.aspx" OnClick="btnDisplayContactList_Click"/></div>
+                <div class="col-md-12"><asp:Button class="btn btn-info" ID="btnBackToCustomers" runat="server" CausesValidation="False" Text="Back" PostBackUrl="~/Customers.aspx" OnClick="btnDisplayContactList_Click"/></div>
             </div>
         </div>
     </form>

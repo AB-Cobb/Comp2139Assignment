@@ -39,9 +39,9 @@
                             <div class="col-md-6"><asp:Label ID="lblEmail" runat="server" Text="(Customer Email)"></asp:Label></div>                      
                             <asp:Label ID="lblAddToContactList" runat="server" ForeColor="#009900" Text="Customer Added To Contact List" Visible="False"></asp:Label>
                             <div class="col-md-6"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbCustomers" ErrorMessage="Please Select a Customer"></asp:RequiredFieldValidator></div>
-                            <div class="btn-group col-md-12 text-center mx-auto">
-                            <div><asp:Button ID="btnAddToContactList" runat="server" OnClick="btnAddToContactList_Click" Text="Add To Contact List" /></div>
-                            <div><asp:Button ID="btnDisplayContactList" runat="server" OnClick="btnDisplayContactList_Click" Text="Display Contact List" CausesValidation="False"  /></div>
+                            <div class="col-md-12 text-center">
+                            <asp:Button ID="btnAddToContactList" class="btn btn-primary" runat="server" OnClick="btnAddToContactList_Click" Text="Add To Contact List" />
+                            <asp:Button ID="btnDisplayContactList" class="btn btn-secondary" runat="server" OnClick="btnDisplayContactList_Click" Text="Display Contact List" CausesValidation="False"  />
                             </div>
                         </div>
                        

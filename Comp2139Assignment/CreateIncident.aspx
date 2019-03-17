@@ -29,7 +29,7 @@
                 <h1 class="text-center">TechKnow Pro - Incident Report Management Software</h1>
                 <h3 class="text-center">Incident Report Page</h3>
 
-                <div class="row">
+                <div class="form-row">
                     <div class="input-group col-md-12">
                         <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Select a Customer</label>
@@ -53,7 +53,7 @@
                 </asp:DropDownList></div>
                 </div>
 
-                <div class="row">
+                <div class="form-row">
                     <div class="col-md-12"><p>Description of problem</p></div>
                     <div class="col-md-12"><asp:TextBox ID="txtDescription" runat="server" Height="150px" Width="600px" TextMode="MultiLine"></asp:TextBox></div>
                     <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescription" runat="server" ControlToValidate="txtDescription" Display="Dynamic" EnableTheming="False" ErrorMessage="You must add a description of the incident" ForeColor="Red"></asp:RequiredFieldValidator></div>

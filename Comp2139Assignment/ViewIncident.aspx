@@ -31,9 +31,9 @@
                             <div class="col-md-6"><asp:DropDownList ID="ddlCustomer" runat="server" AutoPostBack="True" Width="200px" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged"></asp:DropDownList></div>
                         <div class="col-md-12"><asp:ListBox ID="lstbIncident" runat="server" Width="600px" OnSelectedIndexChanged="lstbIncident_SelectedIndexChanged"></asp:ListBox></div>
                         <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbIncident" Display="None" ErrorMessage="Please Select an Incident"></asp:RequiredFieldValidator></div>
-                            <div class="col-md-12 btn-group">
-                                <div><asp:Button ID="btnCreateIncident" runat="server" CausesValidation="False" Text="Create Incident" OnClick="btnCreateIncident_Click" /></div>
-                                <div><asp:Button ID="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" /></div>              
+                            <div class="col-md-12 text-center">
+                                <asp:Button ID="btnCreateIncident" class="btn btn-primary" runat="server" CausesValidation="False" Text="Create Incident" OnClick="btnCreateIncident_Click" />
+                                <asp:Button ID="btnRetrieve" class="btn btn-secondary" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click" />              
                             </div>
                         </div>          
                         <div class="row text-center">

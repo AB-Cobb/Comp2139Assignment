@@ -36,7 +36,8 @@
                     </div>
                 <h4 class="text-center">Please rate this incident by the following categories:</h4>
                     <div class="form-row">
-                        <label for="rblResponseTime" class="col-md-12 col-form-label">Response Time</label>                        <div class="col-md-12">
+                        <label for="rblResponseTime" class="col-md-12 col-form-label">Response Time</label>                       
+                        <div class="col-md-12">
                             <asp:RadioButtonList class="form-check form-check-inline" ID="rblResponseTime" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem>Very Satisfied</asp:ListItem>
                             <asp:ListItem>Satisfied</asp:ListItem>
@@ -77,7 +78,7 @@
                         <label for="txtAdditionalComments" class="col-md-12 col-form-label">Additional Comments</label> 
                         <div class="col-md-12"><asp:TextBox class="form-control" ID="txtAdditionalComments" runat="server" TextMode="MultiLine"></asp:TextBox></div>
                     </div>
-                <asp:CheckBox ID="chkContactMe" runat="server" AutoPostBack="True" OnCheckedChanged="chkContactMe_CheckedChanged" Text="Please contact me to discuss this incident" />
+                <asp:CheckBox ID="chkContactMe" runat="server" OnCheckedChanged="chkContactMe_CheckedChanged" Text="Please contact me to discuss this incident" />
                 <asp:RadioButtonList ID="rblContactMe" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem>Contact Via Email</asp:ListItem>
                     <asp:ListItem>Contact Via Phone</asp:ListItem>

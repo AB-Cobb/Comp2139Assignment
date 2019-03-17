@@ -53,7 +53,7 @@
                     <div class="col-md-12"><p>Survey Listing</p></div>
                     <div class="col-md-12"><asp:ListBox class="form-control" ID="lstbSurvey" runat="server" Rows="8" OnSelectedIndexChanged="lstbSurvey_SelectedIndexChanged"></asp:ListBox></div>
                     <div class="col-md-12"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="lstbSurvey" ErrorMessage="Please Select a Survey"></asp:RequiredFieldValidator></div>
-                    <div class="col-md-12"><asp:Button ID="btnRetrieveSurveyDetails" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieveSurveyDetails_Click" /></div>
+                    <div class="col-md-12"><asp:Button class="btn btn-primary" ID="btnRetrieveSurveyDetails" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieveSurveyDetails_Click" /></div>
                 </div>
             <h3 class="text-center">Customer Rating</h3>
 

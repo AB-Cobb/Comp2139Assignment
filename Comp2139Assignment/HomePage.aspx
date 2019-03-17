@@ -40,7 +40,7 @@
             <ul>
                 <li>Giuseppe Ragusa - 101109502</li>
                 <li>Andrew Cobb - 101142044</li>
-                <li>Arsalan Farooqui - Arsalan Farooqui</li>
+                <li>Arsalan Farooqui - 101144384</li>
             </ul>
            
         </div>
