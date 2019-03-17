@@ -31,7 +31,7 @@
             </ul>
         </nav>
         <div class="container">
-            <h1>TechKnow Pro - Incident Report Management Software</h1>
+            <h1 class="text-center">TechKnow Pro - Incident Report Management Software</h1>
                 <h2>Account Profile</h2>
                     <h4>User Information</h4>
                         <div class="form-row">
